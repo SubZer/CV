@@ -1,0 +1,404 @@
+@import "variable";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Calibri", "Trebuchet MS", sans-serif;
+  user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.app {
+  background-image: linear-gradient(#061520, #008ac1);
+}
+
+// header
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: $padding-left-right;
+  width: 100%;
+  background-color: #0c44583a;
+  box-shadow: 3px 2px 10px #061520;
+  z-index: 99;
+}
+.header_logo {
+  padding: 8px;
+  a {
+    img {
+      width: 120px;
+    }
+  }
+}
+.header_menu {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  align-items: center;
+  text-align: center;
+
+  a {
+    color: #e6ebf0;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 8px 8px 8px #0c4458;
+    height: 100%;
+    line-height: $height;
+    width: 100%;
+    border: 1px solid transparent;
+    &:hover {
+      text-decoration: none;
+      color: #2ba4cf;
+      line-height: calc($height - 3px);
+      transition: all 0.4s ease;
+      border: 1px solid $color-text-shadow;
+    }
+  }
+}
+// body
+.Container {
+  padding-bottom: 50px;
+}
+
+//slider
+.silder {
+  display: flex;
+  height: $height-block-box;
+  // padding-top: $height;
+  width: 100%;
+  box-shadow: 8px 8px 8px #061520;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  overflow: hidden;
+  .hello {
+    background-image: linear-gradient(to right, $color-text-shadow, #000);
+    width: 38%;
+    height: 100%;
+    position: relative;
+    .content_slider {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      h1 {
+        font-size: 60px;
+        color: #ccc;
+        font-weight: 900;
+        text-shadow: 3px 3px 5px #061520;
+      }
+      h2 {
+        font-size: 34.5px;
+        font-weight: bold;
+        color: transparent;
+        position: relative;
+        letter-spacing: 3px;
+        // background-image: linear-gradient($color-text-blue, $color-text-blue);
+        // background-repeat: no-repeat;
+        // -webkit-background-clip: text;
+        // background-position: 289px 0;
+        -webkit-text-stroke: 0.03vw $color-text-blue;
+        &::before {
+          //   content: "";
+          content: "FrontendDeveloper";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 80%;
+          height: 100%;
+          color: $color-text-blue;
+          -webkit-text-stroke: 0vw $color-text-blue;
+          border-right: 2px solid $color-text-blue;
+          overflow: hidden;
+          animation: animate 6s linear infinite;
+        }
+        @keyframes animate {
+          0%,
+          10%,
+          100% {
+            width: 0;
+          }
+          70%,
+          90% {
+            width: 100%;
+          }
+        }
+      }
+      .icon_contact {
+        border: 1px solid $color-text-blue;
+        color: #05a7d5;
+        text-decoration: none;
+        font-size: 20px;
+        text-align: center;
+        padding: 5px 7px;
+        border-radius: 50%;
+      }
+    }
+  }
+  .avt_hello {
+    display: flex;
+    width: 62%;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      filter: brightness(50%);
+    }
+  }
+}
+
+.about {
+  text-align: center;
+  @include Big_block();
+  .about_me {
+    padding-top: 30px;
+    h1 {
+      color: $color-text-blue;
+      @include Title();
+      text-shadow: 2px 2px 2px $color-text-shadow;
+    }
+  }
+  .box_about-avt {
+    padding-top: 80px;
+    height: 280px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .box_about-spiner {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border-left: 6px solid $color-text-blue;
+      border-right: 6px solid $color-text-blue;
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      animation: animation_deg 6s linear infinite;
+    }
+
+    .about_avt {
+      border: 3px solid $color-text-blue;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    // &::before{
+    //   content: "";
+    //   position: absolute;
+    //   width: 280px;
+    //   height: 280px;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   overflow: hidden;
+    //   border-radius: 50%;
+    //
+
+    // }
+    @keyframes animation_deg {
+      0% {
+        transform: rotate(0deg);
+      }
+      0% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  .about_content {
+    padding-top: 80px;
+    h2 {
+      font-size: 34.5px;
+      font-weight: bold;
+      color: $color-text;
+      text-shadow: 1px 1px 2px #41abc9;
+    }
+    .about_content-info {
+      display: flex;
+      padding: 0 80px;
+      color: $color-text-blue;
+      font-size: 20px;
+      .info {
+        width: 33.333%;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px #41abc9;
+
+        p {
+          color: $color-text;
+        }
+      }
+    }
+  }
+}
+
+//skills
+.skills {
+  @include Big_block();
+  position: relative;
+  text-align: center;
+  h1 {
+    @include Title();
+    padding-top: 30px;
+    animation: animation_led-text 5s linear infinite;
+  }
+  @keyframes animation_led-text {
+    0%,
+    18%,
+    20.1%,
+    30%,
+    50.1%,
+    60%,
+    65.1%,
+    80%,
+    90%,
+    92.1%,
+    100% {
+      color: #0a1a25;
+      text-shadow: none;
+    }
+    18.1%,
+    20.1%,
+    30%,
+    50%,
+    60.1%,
+    65%,
+    80.1%,
+    90%,
+    92.1%,
+    100% {
+      color: #fff;
+      text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4,
+        0 0 80px #03bcf4;
+    }
+  }
+  .skills_block {
+    padding: 0 5px;
+    display: flex;
+    color: $color-text-blue;
+    font-weight: bold;
+    align-self: center;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    .skills_experience {
+      margin: 5px;
+      border-radius: 8px;
+      padding: 20px;
+      width: 33.3333%;
+      border: 1px solid $color-text-blue;
+      box-shadow: 0 0 5px $color-BG-gradient;
+
+      h2 {
+        font-size: 40px;
+        padding: 20px 0;
+        letter-spacing: 5px;
+        text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4;
+      }
+      li {
+        font-size: 25px;
+        text-shadow: 0 0 5px $color-BG-gradient;
+
+      }
+    }
+  }
+}
+//Contact
+.contact{
+  @include Big_block();
+  text-align: center;
+  justify-content: center;
+  h1{
+    @include Title();
+    font-size: 80px;
+    color: transparent;
+    padding-top: 30px;
+    position: relative;
+    -webkit-text-stroke: 2px $color-text-blue;
+    text-shadow: 3px 3px 4px $color-text-shadow;
+    letter-spacing: 12px;
+  }
+  form{
+    padding-top: 30px;
+    width: 60%;
+    margin: auto;
+    input[type="submit"]{
+      padding: 10px 50px;
+      color: $color-text-blue;
+      text-shadow: 0 0 5px $color-BG-gradient;
+      font-weight: bold;
+      &:hover{
+        background-color: $color-text-blue;
+        color: $color-text;
+        transition: all .2s linear;
+        cursor: pointer;
+        border-top: 3px solid $color-text;
+        border-bottom: 3px solid $color-text;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+      }
+    }
+    input{
+      padding: 10px;
+      background-color: transparent;
+      border: 3px solid $color-text-blue;
+      border-radius: 5px;
+      box-shadow: 0 0 5px $color-BG-gradient;
+      &:hover{
+        border: 3px solid $color-text;
+        transition: all .2s linear;
+      }
+    }
+    .contact_name-phone{
+      display: flex;
+      input{
+        width: 50%;
+      }
+    }
+    .contact_email-note{
+      input{
+        width: 100%;
+        margin: 5px 0;
+      }
+      textarea{
+        width: 100%;
+        background-color: transparent;
+        border: 3px solid $color-text-blue;
+        box-shadow: 0 0 5px $color-BG-gradient;
+        border-radius: 5px;
+        padding: 10px;
+        &:hover{
+          border: 3px solid $color-text;
+          transition: all .2s linear;
+        }
+      }
+    }
+  }
+}
+
+// footer
+.footer{
+  display: flex;
+  justify-content: space-around;
+  background-image: linear-gradient(#004f6e, #0d2231);
+  text-align: center;
+  align-items: center;
+  padding: 10px 0;
+  color: $color-text-blue;
+  text-shadow: 0 0 5px $color-BG-gradient;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px #000;
+  .footer_phone-mail{
+    text-align: left;
+  }
+}

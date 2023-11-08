@@ -1,0 +1,21 @@
+$padding-left-right: 0 80px;
+$color-BG-gradient: #008ac1;
+$color-text-hover: #2ba4cf;
+$color-text-shadow: #0c4458;
+$color-text-blue: #05a7d5;
+$color-text: #e6ebf0;
+$height: 103.11px;
+$height-block-box: 720px;
+
+@mixin Big_block {
+  background-image: linear-gradient(#000, #0d2231, #004f6e);
+  min-height: $height-block-box;
+  box-shadow: 8px 8px 8px #061520;
+  margin-top: 50px;
+  border-radius: 40px;
+}
+@mixin Title {
+  font-weight: 900;
+  font-size: 60px;
+  letter-spacing: 5px;
+}
