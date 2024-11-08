@@ -6,10 +6,10 @@ const handlebars = require('express-handlebars');
 const app = express();
 const route = require('./routers/index');
 const port = 3000;
-// const db = require('./config/db/index');
+const db = require('./config/db/index');
 
 //connect db 
-// db.connect();
+db.connect();
 
 //hỗ trợ req.body 
 app.use(express.json());

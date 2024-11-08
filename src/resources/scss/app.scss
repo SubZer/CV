@@ -62,7 +62,7 @@ html {
 }
 // body
 .Container {
-  padding-bottom: 50px;
+  // padding-bottom: 50px;
 }
 
 //slider
@@ -128,14 +128,20 @@ html {
           }
         }
       }
-      .icon_contact {
-        border: 1px solid $color-text-blue;
-        color: #05a7d5;
-        text-decoration: none;
-        font-size: 20px;
-        text-align: center;
-        padding: 5px 7px;
-        border-radius: 50%;
+
+      .link_fb-phone{ 
+        display: flex;
+        margin: 0 -3px;
+        .icon_contact {
+          border: 1px solid $color-text-blue;
+          color: #05a7d5;
+          text-decoration: none;
+          font-size: 20px;
+          text-align: center;
+          padding: 5px 10px;
+          margin: 0 3px;
+          border-radius: 50%;
+        }
       }
     }
   }
@@ -308,17 +314,17 @@ html {
       li {
         font-size: 25px;
         text-shadow: 0 0 5px $color-BG-gradient;
-
       }
     }
   }
 }
 //Contact
-.contact{
+.contact {
+  margin-bottom: 50px;
   @include Big_block();
   text-align: center;
   justify-content: center;
-  h1{
+  h1 {
     @include Title();
     font-size: 80px;
     color: transparent;
@@ -328,19 +334,19 @@ html {
     text-shadow: 3px 3px 4px $color-text-shadow;
     letter-spacing: 12px;
   }
-  form{
+  form {
     padding-top: 30px;
     width: 60%;
     margin: auto;
-    input[type="submit"]{
+    input[type="submit"] {
       padding: 10px 50px;
       color: $color-text-blue;
       text-shadow: 0 0 5px $color-BG-gradient;
       font-weight: bold;
-      &:hover{
+      &:hover {
         background-color: $color-text-blue;
         color: $color-text;
-        transition: all .2s linear;
+        transition: all 0.2s linear;
         cursor: pointer;
         border-top: 3px solid $color-text;
         border-bottom: 3px solid $color-text;
@@ -348,38 +354,38 @@ html {
         border-right: 3px solid transparent;
       }
     }
-    input{
+    input {
       padding: 10px;
       background-color: transparent;
       border: 3px solid $color-text-blue;
       border-radius: 5px;
       box-shadow: 0 0 5px $color-BG-gradient;
-      &:hover{
+      &:hover {
         border: 3px solid $color-text;
-        transition: all .2s linear;
+        transition: all 0.2s linear;
       }
     }
-    .contact_name-phone{
+    .contact_name-phone {
       display: flex;
-      input{
+      input {
         width: 50%;
       }
     }
-    .contact_email-note{
-      input{
+    .contact_email-note {
+      input {
         width: 100%;
         margin: 5px 0;
       }
-      textarea{
+      textarea {
         width: 100%;
         background-color: transparent;
         border: 3px solid $color-text-blue;
         box-shadow: 0 0 5px $color-BG-gradient;
         border-radius: 5px;
         padding: 10px;
-        &:hover{
+        &:hover {
           border: 3px solid $color-text;
-          transition: all .2s linear;
+          transition: all 0.2s linear;
         }
       }
     }
@@ -387,7 +393,7 @@ html {
 }
 
 // footer
-.footer{
+.footer {
   display: flex;
   justify-content: space-around;
   background-image: linear-gradient(#004f6e, #0d2231);
@@ -398,7 +404,73 @@ html {
   text-shadow: 0 0 5px $color-BG-gradient;
   font-weight: bold;
   box-shadow: 0px 0px 10px #000;
-  .footer_phone-mail{
+  .footer_phone-mail {
     text-align: left;
+  }
+}
+
+//admin
+.admin {
+  padding-top: 104.7px;
+  .header_admin {
+    background-color: $color-admin;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 30px;
+    align-items: center;
+    p {
+      padding: 0 20px;
+      margin: auto 0;
+      color: $color-text-blue;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .nav_avt {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .nav-content-admin_box {
+    border-top: 3px solid $color-text-shadow;
+    display: flex;
+    .nav_admin {
+      text-align: center;
+      font-size: 20px;
+      width: 12%;
+      border-right: 3px solid $color-admin;
+      padding-bottom: 165px;
+      .active {
+        color: $color-text-blue;
+      }
+      a {
+        border-bottom: 1px solid $color-admin;
+        display: block;
+        padding: 20px 0;
+        text-decoration: none;
+        color: #ccc;
+        font-weight: bold;
+        transition: all 0.2s linear;
+        &:hover {
+          background-color: #ccc;
+          color: $color-admin;
+        }
+      }
+    }
+    .nav_content-admin {
+      width: 88%;
+      table {
+        text-align: center;
+        color: #ccc;
+        font-weight: bold;
+      }
+    }
   }
 }
